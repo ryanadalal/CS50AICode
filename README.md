@@ -10,3 +10,6 @@ removing the second dense layer with drop out yields .84 accuracy
 
 increasing nodes to 256 from 128 is bad
 
+.27 acuracy 
+
+increasing convolutions from 32 and 64 to 64 and 128 helps

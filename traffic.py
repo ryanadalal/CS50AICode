@@ -82,14 +82,14 @@ def get_model():
 
         # Convolutional layer. Learn 32 filters using a 3x3 kernel
         tf.keras.layers.Conv2D(
-            32, (3, 3), activation="relu", input_shape=(IMG_WIDTH, IMG_HEIGHT, 3)
+            16, (3, 3), activation="relu", input_shape=(IMG_WIDTH, IMG_HEIGHT, 3)
         ),
 
         # Max-pooling layer, using 2x2 pool size
         tf.keras.layers.MaxPooling2D(pool_size=(2, 2)),
 
         tf.keras.layers.Conv2D(
-            64, (5, 5), activation="relu",
+            32, (3, 3), activation="relu",
         ),
 
         # Max-pooling layer, using 2x2 pool size
@@ -99,8 +99,8 @@ def get_model():
         tf.keras.layers.Flatten(),
 
         # Add a hidden layer with dropout
-        tf.keras.layers.Dense(128, activation="relu"),
-        tf.keras.layers.Dropout(0.3),
+        tf.keras.layers.Dense(800, activation="relu"),
+        tf.keras.layers.Dropout(0.5),
 
         # Add an output layer with output units for all 10 digits
         tf.keras.layers.Dense(NUM_CATEGORIES, activation="softmax")
